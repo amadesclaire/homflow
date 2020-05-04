@@ -8,6 +8,10 @@
     #trimmomatic module location:  /ddn/home9/homlab/bin/Trimmomatic-0.38/Trimmomatic-0.38.jar
     #usr/local/apps (systemwide)
 
+#Jarfile location
+jar="/ddn/home9/homlab/bin/Trimmomatic-0.38/Trimmomatic-0.38.jar"
+
+
 #Safety
 if [[ $# < 2 ]]; then
     echo 'Please pass Job number and email'
@@ -33,7 +37,6 @@ if [ -f "$pbs" ]; then
 fi
 ./pbs.sh $pbs $2 "tm" #create pbs
 echo 'module load java' >> $pbs #module needed by pbs
-jar="/ddn/home9/homlab/bin/Trimmomatic-0.38/Trimmomatic-0.38.jar"
 read -p 'phread?(33/64) ' phred
 
 case $# in 
